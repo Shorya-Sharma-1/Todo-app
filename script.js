@@ -65,3 +65,25 @@ function filterTodos(filter){
     }
 }
 
+function renderTodos() {
+    todosList.innerHTML = "";
+
+    const filteredTodos = filterTodos(currentFilter)
+
+    filteredTodos.forEach(todo => {
+        const todoItem = document.createElement('li')
+        todoItem.classList.add('todo-item')
+        if(todo.completed) todoItem.classList.add('completed')
+
+        const checkboxContainer = document.createElement('label')
+        checkboxContainer.classList.add('checkbox-container')  
+         
+        const checkbox = document.createElement('input')
+        checkbox.type = 'checkbox' 
+        checkbox.classList.add('todo-checkbox')
+        checkbox.checked = todo.completed
+
+
+  
+    })
+}
