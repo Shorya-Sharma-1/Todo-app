@@ -82,6 +82,13 @@ function renderTodos() {
         checkbox.type = 'checkbox' 
         checkbox.classList.add('todo-checkbox')
         checkbox.checked = todo.completed
+        checkbox.addEventListener("change", () => toggleTodo(todo.id));
+
+        const checkmark = document.createElement("span");
+        checkmark.classList.add("checkmark");
+
+        checkboxContainer.appendChild(checkbox);
+        checkboxContainer.appendChild(checkmark);
 
 
   
