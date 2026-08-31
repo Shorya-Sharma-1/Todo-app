@@ -90,7 +90,20 @@ function renderTodos() {
         checkboxContainer.appendChild(checkbox);
         checkboxContainer.appendChild(checkmark);
 
+        const todoText = document.createElement('span')
+        todoText.classList.add('todo-item-text')
+        todoText.textContent=todo.text;
 
-  
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.innerHTML='<i class="fas fa-times"><i>';
+        deleteBtn.addEventListener('click', ()=>deleteTodo(todo.id))
+
+        todoItem.appendChild(checkboxContainer)
+        todoItem.appendChild(todoText)
+        todoItem.appendChild(deleteBtn)
+
+        todosList.appendChild(todoItem)
+
     })
 }
