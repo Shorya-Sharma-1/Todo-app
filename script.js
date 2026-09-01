@@ -111,9 +111,29 @@ function renderTodos() {
     })
 }
 
+function clearCompleted() {
+    todos = todos.filter((todo) => !todo.completed);
+    saveTodos();
+    renderTodos();
+}
 
+function toggleTodo(id){
+    todos=todos.map((todo)=> {
+        if(todo.id===id){
+            return {...todo, completed: !todo.completed};
+        };
+        return todo;
+    });
 
+    saveTodos();
+    renderTodos();
+}
 
+function deleteTodo(id) {
+  todos = todos.filter((todo) => todo.id !== id);
+  saveTodos();
+  renderTodos();
+}
 
 
 
