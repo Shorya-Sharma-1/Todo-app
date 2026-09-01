@@ -112,7 +112,7 @@ header p {
     padding : 5px 3px;
     cursor : pointer;
     color : var(--gray);
-    border-bottom : 2px soild transparent;
+    border-bottom : 2px solid transparent;
     transition : all 0.2s; 
 }
 
@@ -131,7 +131,7 @@ header p {
 
 .todos-container {
     padding : 15px 0;
-    max-width: 300px;
+    max-width: 500px;
     overflow-y: auto;
 }
 
@@ -145,7 +145,7 @@ header p {
     padding : 12px 15px;
     display : flex;
     align-items: center;
-    transition: bakcground-color 0.2s;
+    transition: background-color 0.2s;
 }
 
 
@@ -183,7 +183,7 @@ header p {
 }
 
 
-.todo-checkbox:checked + .checked::after {
+.todo-checkbox:checked + .checkmark::after {
     content : "";
     position : absolute;
     left : 6px;
@@ -199,7 +199,7 @@ header p {
 .todo-item-text{
     flex:1;
     font-size : 1rem;
-    transition: all 0.2;
+    transition: all 0.2s;
 }
 
 
