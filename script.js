@@ -143,7 +143,28 @@ function loadTodos(){
     renderTodos();
 }
 
+filters.forEach(filter => {
+    filter.addEventListener('click', ()=>{
+        setActiveFilter(filter.getAttribute("data-filter"));
+    })
+});
+
+function setActiveFilter(filter){
+    currentFilter=filter;
+
+    filters.forEach((item)=>{
+        if(item.getAttribute("data-filter")===filter){
+            item.classList.add("active")
+        }
+        else{
+            item.classList.remove("active");
+        }
+    });
+    renderTodos();
+}
+
 
 window.addEventListener("DOMContentLoaded" , ()=> {
     loadTodos();
+    updateItemsCount();
 });
