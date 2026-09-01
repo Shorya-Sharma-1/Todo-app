@@ -32,7 +32,10 @@ function addTodo(text){
 
     todos.push(todo)
 
-    saveTodos()
+    saveTodos();
+    renderTodos();
+
+    taskInput.value = "";
 }
 
 function saveTodos(){
@@ -107,3 +110,20 @@ function renderTodos() {
 
     })
 }
+
+
+
+
+
+
+
+function loadTodos(){
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) todos = JSON.parse(storedTodos);
+    renderTodos();
+}
+
+
+window.addEventListener("DOMContentLoaded" , ()=> {
+    loadTodos();
+});
